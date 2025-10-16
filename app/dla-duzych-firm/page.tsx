@@ -1,8 +1,8 @@
 import fs from "node:fs"
 import path from "node:path"
-import FeatureGrid from "@/components/FeatureGrid"
-import Stats from "@/components/Stats"
-import Testimonial from "@/components/Testimonial"
+import FeatureGrid from "@/components/feature-grid"
+import Stats from "@/components/stats"
+import Testimonial from "@/components/testimonial"
 
 type Section =
   | { layout: "featureGrid"; items: { title?: string; desc?: string }[] }
