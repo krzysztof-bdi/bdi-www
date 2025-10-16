@@ -1,5 +1,4 @@
-import fs from "node:fs"
-import path from "node:path"
+import data from "@/content/home.json"
 import FeatureGrid from "@/components/FeatureGrid"
 import Stats from "@/components/Stats"
 import Testimonial from "@/components/Testimonial"
@@ -9,21 +8,15 @@ type Section =
   | { layout: "stats"; items: { label?: string; value?: string }[] }
   | { layout: "testimonial"; items: { author?: string; role?: string; desc?: string }[] }
 
-function getHomeData(): { sections: Section[] } {
-  const file = path.join(process.cwd(), "content", "home.json")
-  const raw = fs.readFileSync(file, "utf-8")
-  return JSON.parse(raw)
-}
-
 export default function HomePage() {
-  const data = getHomeData()
+  const sections: Section[] = (data as any).sections ?? []
   return (
     <div className="min-h-screen bg-[#0A192F] text-white">
       <div className="mx-auto max-w-5xl px-4 py-14">
         <h1 className="text-3xl font-bold tracking-tight">Baltic Digital Institute</h1>
         <p className="opacity-80 mt-2">Strategia, badania, wdrożenia cyfrowe — WCAG 2.2 AA, Core Web Vitals.</p>
       </div>
-      {data.sections.map((s, i) => {
+      {sections.map((s, i) => {
         if (s.layout === "featureGrid") return <FeatureGrid key={i} items={s.items} />
         if (s.layout === "stats") return <Stats key={i} items={s.items} />
         if (s.layout === "testimonial") return <Testimonial key={i} items={s.items} />
