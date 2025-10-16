@@ -1,0 +1,27 @@
+{
+  "sections": [
+    {
+      "layout": "featureGrid",
+      "items": [
+        {"title": "Strategia cyfrowa", "desc": "Od wizji do wdrożenia — audyty, roadmapy, governance."},
+        {"title": "Badania i analityka", "desc": "Użyteczność, IA, eksperymenty, pomiary Core Web Vitals."},
+        {"title": "Wdrożenia", "desc": "Next.js, Tailwind, automatyzacje, jakość i dostępność WCAG 2.2 AA."}
+      ]
+    },
+    {
+      "layout": "stats",
+      "items": [
+        {"label": "Lata doświadczeń", "value": "10+"},
+        {"label": "Projekty publiczne", "value": "50+"},
+        {"label": "Audytowane serwisy", "value": "100+"},
+        {"label": "Szybkość wdrożeń", "value": "Tygodnie"}
+      ]
+    },
+    {
+      "layout": "testimonial",
+      "items": [
+        {"author": "Partner samorządowy", "role": "Dyrektor IT", "desc": "BDI dowozi: szybko, mądrze, z pełną odpowiedzialnością za efekt."}
+      ]
+    }
+  ]
+}
