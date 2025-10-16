@@ -1,14 +1,14 @@
-type Feature = { title: string; desc?: string }
-export default function FeatureGrid({ items, columns=3 }: { items: Feature[]; columns?: 2|3|4 }) {
-  const grid = columns === 4 ? "md:grid-cols-4" : columns === 2 ? "md:grid-cols-2" : "md:grid-cols-3"
+export default function FeatureGrid({ items }: { items: { title?: string; desc?: string }[] }) {
   return (
-    <div className={`grid gap-6 ${grid}`}>
-      {items.map((f, i) => (
-        <div key={i} className="card p-6">
-          <h3 className="text-lg font-medium">{f.title}</h3>
-          {f.desc && <p className="text-sm text-[color:var(--brand-light)] mt-2">{f.desc}</p>}
-        </div>
-      ))}
-    </div>
+    <section className="py-12">
+      <div className="mx-auto max-w-5xl grid gap-6 md:grid-cols-3">
+        {items?.map((it, i) => (
+          <div key={i} className="rounded-2xl border border-white/10 p-6 bg-white/5">
+            <h3 className="text-lg font-semibold">{it.title}</h3>
+            <p className="text-sm opacity-80 mt-2">{it.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
   )
 }
