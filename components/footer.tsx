@@ -1,9 +1,1 @@
-export default function Footer() {
-  return (
-    <footer className="border-t border-[#0d1b2a] mt-16">
-      <div className="container py-10 text-sm text-[color:var(--brand-light)]">
-        © {new Date().getFullYear()} Baltic Digital Institute — Wszelkie prawa zastrzeżone.
-      </div>
-    </footer>
-  )
-}
+export default function Footer(){return(<footer className="border-t border-white/10 mt-16"><div className="mx-auto max-w-6xl px-4 py-8 text-xs opacity-70">© 2025 Baltic Digital Institute</div></footer> )}
